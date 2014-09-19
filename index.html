@@ -15,45 +15,39 @@
     <!-- Using Custom Elements -->
     <aha-tree 
         id="example"
-        data-src='{"name": "root", "children": [{"name": "Im a", "children": [{"name": "b"}]}]}'>
+        data-src='{"name": "Tree A", "children": [{"name": "Child", "children": [{"name": "Grandchild"}]}]}'>
     </aha-tree>
 
     <aha-tree id="example2"></aha-tree>
 
     <script>
         document.getElementById('example2').data = {
-            "name": "root", 
+            "name": "Tree B", 
             "children": [
                 {
-                    "name": "Im a", 
+                    "name": "Child A", 
                     "children": [{
-                        "name": "b"
+                        "name": "Grandchild A"
                     }]
                 },
                 {
-                    "name": "Im a", 
+                    "name": "Child B", 
                     "children": [{
-                        "name": "b"
+                        "name": "Grandchild B"
                     }]
                 },
                 {
-                    "name": "Im a", 
+                    "name": "Child C", 
                     "children": [{
-                        "name": "b"
+                        "name": "Grandchild C"
                     }]
                 },
                 {
-                    "name": "Im a", 
+                    "name": "Child D", 
                     "children": [{
-                        "name": "b"
+                        "name": "Grandchild D"
                     }]
-                },
-                {
-                    "name": "Im a", 
-                    "children": [{
-                        "name": "b"
-                    }]
-                },
+                }
             ]
         };
     </script>
