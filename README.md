@@ -37,26 +37,21 @@ Or [download as ZIP](https://github.com/liuwenchao/aha-tree/archive/master.zip).
 3. Start using it!
 
     ```html
-    <aha-tree></aha-tree>
+    <aha-tree data-src='{
+        "name": "Tree", 
+        "children": [{ 
+            "name": "child", 
+            "children": [{"name": "grandchild"}]
+        }]
+    }'></aha-tree>
     ```
 
 ## Options
 
 Attribute     | Options     | Default      | Description
 ---           | ---         | ---          | ---
-`foo`         | *string*    | `bar`        | Lorem ipsum dolor.
+`data-src`    | *string*    | ``           | a JSON string.
 
-## Methods
-
-Method        | Parameters   | Returns     | Description
----           | ---          | ---         | ---
-`unicorn()`   | None.        | Nothing.    | Magic stuff appears.
-
-## Events
-
-Event         | Description
----           | ---
-`onsomething` | Triggers when something happens.
 
 ## Development
 
