@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>&lt;aha-tree&gt;</title>
+
+    <!-- Importing Web Component"s Polyfill -->
+    <script src="bower_components/platform/platform.js"></script>
+
+    <!-- Importing Custom Elements -->
+    <link rel="import" href="src/aha-tree.html">
+</head>
+<body>
+
+    <!-- Using Custom Elements -->
+    <aha-tree 
+        id="example"
+        data-src='{"name": "Tree A", "children": [{"name": "Child", "children": [{"name": "Grandchild"}]}]}'>
+    </aha-tree>
+
+    <aha-tree id="example2"></aha-tree>
+
+    <script>
+        document.getElementById('example2').data = {
+            "name": "Tree B", 
+            "children": [
+                {
+                    "name": "Child A", 
+                    "children": [{
+                        "name": "Grandchild A"
+                    }]
+                },
+                {
+                    "name": "Child B", 
+                    "children": [{
+                        "name": "Grandchild B"
+                    }]
+                },
+                {
+                    "name": "Child C", 
+                    "children": [{
+                        "name": "Grandchild C"
+                    }]
+                },
+                {
+                    "name": "Child D", 
+                    "children": [{
+                        "name": "Grandchild D"
+                    }]
+                }
+            ]
+        };
+    </script>
+</body>
+</html>
