@@ -2,10 +2,57 @@
 <link rel="import" href="../../polymer/polymer.html">
 
 <!-- Define your custom element -->
-<polymer-element name="aha-tree">
-
+<polymer-element name="aha-tree" attributes="data-src">
+    <template>
+        <style>
+            .parent.collapsed:before{
+                content: '+ ';
+            }
+            .parent.expanded:before{
+                content: '- ';
+            }
+            .parent {
+                cursor: pointer;
+            }
+            ul{
+                margin: 0;
+            }
+            li{
+                list-style-type: none;
+            }
+        </style>
+        <div id="main" unresolved="">
+            <template id="tree_template" bind="{{data}}">
+                <div 
+                    class="{{ children && children.length > 0 ? 'parent' : ''}} expanded" 
+                    on-click="{{toggleChildren}}">
+                    {{ name }}
+                </div>
+                <ul>
+                    <template repeat="{{ child in children }}">
+                        <li>
+                            <template ref="tree_template" bind="{{child}}"></template>
+                        </li>
+                    </template>
+                </ul>
+            </template>
+        </div>
+    </template>
     <script>
         Polymer('aha-tree', {
+            data: {},
+            toggleChildren: function(e, detail, sender){
+                if (e.target.className.indexOf('parent') > -1 && e.target.nextElementSibling) {
+                    var current_display = e.target.nextElementSibling.style.display;
+                    if (current_display === 'none') {
+                        e.target.className = 'parent expanded';
+                        e.target.nextElementSibling.style.display = 'block';
+                    } else {
+                        e.target.className = 'parent collapsed';
+                        e.target.nextElementSibling.style.display = 'none';
+                    }
+                }
+            },
             // Fires when an instance of the element is created
             created: function() {},
 
@@ -13,7 +60,13 @@
             domReady: function() {},
 
             // Fires when the "<polymer-element>" has been fully prepared
-            ready: function() {},
+            ready: function() {
+                if (this.dataset.src) {
+                    this.data = JSON.parse(this.dataset.src);
+                }
+                this.$.main.setAttribute('resolved', '');
+                this.$.main.removeAttribute('unresolved');
+            },
 
             // Fires when the element was inserted into the document
             attached: function() {},
