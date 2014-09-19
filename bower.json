@@ -1,6 +1,6 @@
 {
     "name": "aha-tree",
-    "version": "0.0.0",
+    "version": "1.0.0",
     "description": "A custome element to render a JSON to tree.",
     "license": "MIT",
     "main": "dist/aha-tree.html",

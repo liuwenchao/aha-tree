@@ -1,4 +1,4 @@
-# &lt;aha-tree&gt;
+# &lt;aha-tree&gt; ![Bower Version](https://badge.fury.io/bo/aha-tree.svg)
 
 > A bare minimum custom element starter-kit using [Polymer](http://www.polymer-project.org/).
 >
