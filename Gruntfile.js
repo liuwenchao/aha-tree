@@ -11,11 +11,11 @@ module.exports = function(grunt) {
         },
         'gh-pages': {
             options: {
-                clone: 'bower_components/my-repo'
+                clone: 'bower_components/aha-tree'
             },
             src: [
                 'bower_components/**/*',
-                '!bower_components/my-repo/**/*',
+                '!bower_components/aha-tree/**/*',
                 'demo/*', 'src/*', 'index.html'
             ]
         },

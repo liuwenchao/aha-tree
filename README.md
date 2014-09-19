@@ -1,4 +1,4 @@
-# &lt;my-repo&gt;
+# &lt;aha-tree&gt;
 
 > A bare minimum custom element starter-kit using [Polymer](http://www.polymer-project.org/).
 >
@@ -8,17 +8,17 @@
 
 ## Demo
 
-[Check it live!](http://my-user.github.io/my-repo)
+[Check it live!](http://liuwenchao.github.io/aha-tree)
 
 ## Install
 
 Install the component using [Bower](http://bower.io/):
 
 ```sh
-$ bower install my-repo --save
+$ bower install aha-tree --save
 ```
 
-Or [download as ZIP](https://github.com/my-user/my-repo/archive/master.zip).
+Or [download as ZIP](https://github.com/liuwenchao/aha-tree/archive/master.zip).
 
 ## Usage
 
@@ -31,13 +31,13 @@ Or [download as ZIP](https://github.com/my-user/my-repo/archive/master.zip).
 2. Import Custom Element:
 
     ```html
-    <link rel="import" href="bower_components/my-repo/dist/my-element.html">
+    <link rel="import" href="bower_components/aha-tree/dist/aha-tree.html">
     ```
 
 3. Start using it!
 
     ```html
-    <my-element></my-element>
+    <aha-tree></aha-tree>
     ```
 
 ## Options
@@ -102,7 +102,7 @@ In order to run it locally you'll need to fetch some dependencies and a basic se
 
 ## History
 
-For detailed changelog, check [Releases](https://github.com/my-user/my-repo/releases).
+For detailed changelog, check [Releases](https://github.com/liuwenchao/aha-tree/releases).
 
 ## License
 
