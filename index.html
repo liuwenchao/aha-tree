@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>&lt;aha-tree&gt;</title>
 
-    <!-- Importing Web Component's Polyfill -->
+    <!-- Importing Web Component"s Polyfill -->
     <script src="bower_components/platform/platform.js"></script>
 
     <!-- Importing Custom Elements -->
@@ -13,7 +13,49 @@
 <body>
 
     <!-- Using Custom Elements -->
-    <aha-tree></aha-tree>
+    <aha-tree 
+        id="example"
+        data-src='{"name": "root", "children": [{"name": "Im a", "children": [{"name": "b"}]}]}'>
+    </aha-tree>
 
+    <aha-tree id="example2"></aha-tree>
+
+    <script>
+        document.getElementById('example2').data = {
+            "name": "root", 
+            "children": [
+                {
+                    "name": "Im a", 
+                    "children": [{
+                        "name": "b"
+                    }]
+                },
+                {
+                    "name": "Im a", 
+                    "children": [{
+                        "name": "b"
+                    }]
+                },
+                {
+                    "name": "Im a", 
+                    "children": [{
+                        "name": "b"
+                    }]
+                },
+                {
+                    "name": "Im a", 
+                    "children": [{
+                        "name": "b"
+                    }]
+                },
+                {
+                    "name": "Im a", 
+                    "children": [{
+                        "name": "b"
+                    }]
+                },
+            ]
+        };
+    </script>
 </body>
 </html>

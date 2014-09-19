@@ -2,10 +2,24 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
 <!-- Define your custom element -->
-<polymer-element name="aha-tree">
-
+<polymer-element name="aha-tree" attributes="data-src">
+    <template>
+        <div id="main" unresolved="">
+            <template id="tree_template" bind="{{data}}">
+                <header>{{ name }}</header>
+                <ul>
+                    <template repeat="{{ child in children }}">
+                        <li>
+                            <template ref="tree_template" bind="{{child}}"></template>
+                        </li>
+                    </template>
+                </ul>
+            </template>
+        </div>
+    </template>
     <script>
         Polymer('aha-tree', {
+            data: {},
             // Fires when an instance of the element is created
             created: function() {},
 
@@ -13,7 +27,13 @@
             domReady: function() {},
 
             // Fires when the "<polymer-element>" has been fully prepared
-            ready: function() {},
+            ready: function() {
+                if (this.dataset.src) {
+                    this.data = JSON.parse(this.dataset.src);
+                }
+                this.$.main.setAttribute('resolved', '');
+                this.$.main.removeAttribute('unresolved');
+            },
 
             // Fires when the element was inserted into the document
             attached: function() {},
